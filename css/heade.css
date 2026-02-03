@@ -1,0 +1,359 @@
+:root {
+  --primary-cyan: #00d2d3; /* Sening ranging */
+  --bg-dark: #040914; /* Asosiy fon */
+  --text-main: #ffffff;
+  --text-muted: #a0aec0;
+  --font-logo: "Orbitron", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: var(--font-body);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* --- HEADER SETTINGS --- */
+.pro-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px; /* Kattaroq balandlik - Premium his beradi */
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: 0.4s ease;
+  background: transparent; /* Boshida shaffof */
+  padding: 10px 0px;
+}
+
+/* Scroll bo'lganda orqa fon qorayadi */
+.pro-header.scrolled {
+  height: 100px;
+  padding: 7px 0px;
+  background: rgba(4, 9, 20, 0.9);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  width: 90%; /* Chetlardan joy qoldiramiz */
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Logo chapda, Menu o'ngda */
+  align-items: center;
+}
+
+/* --- LOGO --- */
+.brand-logo {
+  font-family: var(--font-logo);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-decoration: none;
+  letter-spacing: 1px;
+  z-index: 1001; /* Doim eng ustda */
+}
+
+.brand-logo .dot {
+  color: var(--primary-cyan);
+}
+
+/* --- DESKTOP MENU --- */
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 60px; /* MENU VA LINKLAR ORASI KATTA OCHILDI */
+}
+
+.nav-item {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: var(--primary-cyan);
+}
+
+/* Oddiy "Bog'lanish" tugmasi (Headerda) */
+.nav-btn {
+  padding: 10px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px; /* Dumaloqroq */
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+  border-color: var(--primary-cyan);
+  color: var(--primary-cyan);
+  background: rgba(0, 210, 211, 0.05);
+}
+
+/* --- BURGER MENU ICON (Animatsiya) --- */
+.burger-menu {
+  display: none; /* Desktopda yo'q */
+  width: 30px;
+  cursor: pointer;
+  z-index: 1100;
+  position: relative;
+}
+
+.burger-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-main);
+  margin: 6px 0;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+/* Burger -> X ga aylanishi */
+.burger-menu.active .burger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+  background-color: var(--primary-cyan);
+}
+.burger-menu.active .burger-line:nth-child(2) {
+  transform: rotate(-45deg) translate(5px, -6px);
+  background-color: var(--primary-cyan);
+}
+
+/* --- MOBILE OVERLAY (Rasmdagidek) --- */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-dark); /* Qora fon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s ease;
+  z-index: 1050;
+}
+
+/* Menu ochilganda */
+.mobile-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay-content {
+  text-align: center;
+  width: 100%;
+}
+
+.mobile-list {
+  list-style: none;
+  margin-bottom: 50px;
+}
+
+.mobile-list li {
+  margin: 25px 0;
+  overflow: hidden; /* Animatsiya uchun */
+}
+
+.m-link {
+  display: block;
+  font-family: var(--font-body); /* Oddiyroq shrift */
+  font-size: 2rem; /* Katta o'lcham */
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 300; /* Ingichka - Premium style */
+  transform: translateY(100%); /* Pastdan chiqadi */
+  transition:
+    transform 0.5s ease,
+    color 0.3s;
+}
+
+.mobile-overlay.open .m-link {
+  transform: translateY(0); /* Joyiga qaytadi */
+}
+
+/* Staggered Delay (Linklar ketma-ket chiqadi) */
+.mobile-overlay.open li:nth-child(1) .m-link {
+  transition-delay: 0.1s;
+}
+.mobile-overlay.open li:nth-child(2) .m-link {
+  transition-delay: 0.2s;
+}
+.mobile-overlay.open li:nth-child(3) .m-link {
+  transition-delay: 0.3s;
+}
+.mobile-overlay.open li:nth-child(4) .m-link {
+  transition-delay: 0.4s;
+}
+
+.m-link:hover {
+  color: var(--primary-cyan);
+}
+
+/* --- MOBILE MENUDA ODDIY BUTTON --- */
+.mobile-btn-simple {
+  display: inline-block;
+  padding: 15px 40px;
+  background: transparent;
+  border: 1px solid var(--primary-cyan); /* Faqat ingichka ramka */
+  color: var(--text-main);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  transition: 0.3s;
+  /* Hech qanday chiziq-piziq yo'q, toza button */
+}
+
+.mobile-btn-simple:hover {
+  background: var(--primary-cyan);
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 210, 211, 0.3);
+}
+
+.social-text {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.social-text span {
+  margin: 0 5px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.social-text span:hover {
+  color: var(--primary-cyan);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+  .desktop-menu {
+    display: none;
+  }
+  .burger-menu {
+    display: block;
+  }
+}
+
+/* Test Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 4rem;
+  font-family: var(--font-logo);
+}
+.cyan-text {
+  color: var(--primary-cyan);
+  text-shadow: 0 0 30px rgba(0, 210, 211, 0.3);
+}
+
+.logoo {
+  width: 170px;
+}
+
+/* --- CLOSE BUTTON STYLE --- */
+.close-menu {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 50px; /* Katta va ko'rinadigan X */
+  color: var(--primary-cyan);
+  cursor: pointer;
+  line-height: 1;
+  transition: 0.3s ease;
+  z-index: 1100;
+}
+
+.close-menu:hover {
+  transform: rotate(90deg);
+  text-shadow: 0 0 15px var(--primary-cyan);
+}
+
+/* --- MOBILE MENU OVERLAY --- */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(4, 9, 20, 0.98); /* Manhattan uslubidagi to'q fon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1050;
+}
+
+.mobile-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- TOZA MOBILE BUTTON --- */
+.mobile-btn-simple {
+  display: inline-block;
+  padding: 18px 45px;
+  background: transparent;
+  border: 1px solid var(--primary-cyan);
+  color: var(--primary-cyan);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 3px;
+  transition: 0.4s;
+}
+
+.mobile-btn-simple:hover {
+  background: var(--primary-cyan);
+  color: #040914;
+  box-shadow: 0 0 30px rgba(0, 210, 211, 0.4);
+}
+
+/* Linklar orasidagi masofa */
+.mobile-list li {
+  margin: 30px 0;
+}
+
+.m-link {
+  font-size: 2.2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-text a {
+  color: #555;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-text a:hover {
+  color: var(--primary-cyan);
+}

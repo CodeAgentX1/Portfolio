@@ -1,0 +1,32 @@
+.developer-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.developer-childs {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 210, 211, 0.2);
+  width: 350px;
+  height: 400px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.developer-childs:hover {
+  background: rgba(0, 210, 211, 0.1);
+  border-color: var(--primary-aqua);
+  transform: translateY(-10px);
+}
+
+.developer-childs img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
