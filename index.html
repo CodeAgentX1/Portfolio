@@ -2,46 +2,364 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ismoiljon | Full-Stack Developer & Designer</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Islomjon.uz</title>
-  </head>
+    <link rel="stylesheet" href="./css/main.css" />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
   <body>
-    <div class="form">
-      <form action="" onsubmit="return sendtelegram();">
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Ismingiz"
-          required
-          autocomplete="off"
-        />
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email manzilingiz"
-          required
-        />
-        <br />
-        <br />
-        <textarea
-          name="message"
-          id="message"
-          cols="45"
-          rows="10"
-          placeholder="Izoh qoldiring"
-          required
-        ></textarea>
-        <br />
-        <br />
-        <input type="submit" value="Yuborish" id="btn" />
-      </form>
+    <header class="pro-header">
+      <div class="container">
+        <a href="#" class="brand-logo"
+          ><img class="logoo" src="./images/Agent_Logo.png" alt=""
+        /></a>
+
+        <nav class="desktop-menu">
+          <a href="#home" class="nav-item">Home</a>
+          <a href="#about" class="nav-item">About</a>
+          <a href="#specialist" class="nav-item">Expertise</a>
+          <a href="#portfolio" class="nav-item">Portfolio</a>
+          <a href="#services" class="nav-item">Services</a>
+          <a href="#contact" class="nav-btn">Contact</a>
+        </nav>
+
+        <div class="burger-menu" id="open-btn">
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-overlay" id="mobile-nav">
+      <div class="close-menu" id="close-btn">&times;</div>
+
+      <div class="overlay-content">
+        <ul class="mobile-list">
+          <li><a href="#home" class="m-link">Home</a></li>
+          <li><a href="#about" class="m-link">About</a></li>
+          <li><a href="#portfolio" class="m-link">Portfolio</a></li>
+          <li><a href="#services" class="m-link">Services</a></li>
+          <li><a href="#contact" class="m-link">Contact</a></li>
+        </ul>
+
+        <div class="mobile-footer">
+          <a href="#contact" class="mobile-btn-simple">Start a Project</a>
+          <div class="social-text">
+            <a href="#">Telegram</a> / <a href="#">Instagram</a> /
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <main>
+      <section id="home">
+        <div class="hero-flex">
+          <div class="hero-left" data-aos="fade-right">
+            <span class="neon-text" style="letter-spacing: 5px"
+              >WELCOME TO THE FUTURE</span
+            >
+            <h1>Ismoiljon <span class="aqua">Legend</span></h1>
+            <div class="typing-wrapper">
+              I am a <span id="typed" class="aqua"></span>
+            </div>
+            <p
+              style="
+                color: var(--text-gray);
+                margin: 25px 0;
+                font-size: 1.1rem;
+                line-height: 1.6;
+              "
+            >
+              I build more than websites I craft digital experiences that feel
+              bold, fast, and unforgettable. Every pixel has purpose, every
+              line of code moves the mission forward.
+            </p>
+            <div class="btn-group">
+              <a href="#works" class="btn-main">VIEW PROJECTS</a>
+            </div>
+          </div>
+          <div class="hero-right" data-aos="zoom-in">
+            <div class="agent-img-wrapper">
+              <img
+                src="./images/Ismoiljon_Agent_Coder.jpg"
+                class="agent-img"
+                alt="Ismoiljon"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="specialist">
+        <h2 class="developer dev" data-aos="fade-up">
+          More <span class="aqua">About</span> Me
+        </h2>
+        <div class="specialist-container" data-aos="zoom-in-up">
+          <div class="spec-glow"></div>
+          <div class="spec-media">
+            <img src="./images/I.jpg" class="spec-img" alt="Specialist" />
+            <div class="spec-badge">Full-Stack Architect</div>
+          </div>
+          <div class="spec-info">
+            <p class="spec-kicker">Experience &amp; Approach</p>
+            <h2 class="spec-title">
+              Ismoiljon <span class="aqua">Developer</span>
+            </h2>
+            <p class="spec-text">
+              Raqamli mahsulotlarni strategiyadan tortib yakuniy ishlab
+              chiqarishgacha yetkazaman. Frontend’da nafis UI, backend’da esa
+              ishonchli arxitektura natijaga yo'naltirilgan ishlash uslubini
+              qo'llayman.
+            </p>
+
+            <div class="spec-stats">
+              <div class="stat">
+                <h3>30+</h3>
+                <p>Prototip va MVP</p>
+              </div>
+              <div class="stat">
+                <h3>3+</h3>
+                <p>Soha yo'nalishlari</p>
+              </div>
+              <div class="stat">
+                <h3>99%</h3>
+                <p>Responsive moslashuv</p>
+              </div>
+            </div>
+            <div class="spec-cta">
+              <a href="#contact" class="btn-main">Loyihani Boshlash</a>
+              <a href="#works" class="btn-outline">Ishlarimni Ko'rish</a>
+            </div>
+            <div class="social-links">
+              <a href="https://t.me/CodeAgentX1" target="_blank"
+                ><i class="fab fa-telegram"></i> Telegram</a
+              >
+              <a href="https://instagram.com" target="_blank"
+                ><i class="fab fa-instagram"></i> Instagram</a
+              >
+              <a href="https://github.com/CodeAgentX1"
+                ><i class="fab fa-github"></i> GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="works">
+        <h2 class="developer dev" data-aos="fade-up">
+          TOP 3 <span class="aqua">LOYIHALARIM</span>
+        </h2>
+        <div class="portfolio-grid">
+          <div
+            class="work-card"
+            data-aos="flip-left"
+            onclick="
+              window.open('https://manhattan-opal.vercel.app/', '_blank')
+            "
+          >
+            <img src="./images/manhattan.png" alt="Project 1" />
+            <div class="work-overlay">
+              <h3>ManHattan</h3>
+              <p>Modern va tezkor onlayn do'kon ekotizimi.</p>
+              <span class="aqua"
+                >View Live <i class="fas fa-external-link-alt"></i
+              ></span>
+            </div>
+          </div>
+          <div
+            class="work-card"
+            data-aos="flip-up"
+            onclick="
+              window.open('https://rump-force.github.io/pizzashop/', '_blank')
+            "
+          >
+            <img src="./images/pizzashop.png" alt="Project 2" />
+            <div class="work-overlay">
+              <h3>Pizzashop</h3>
+              <p>Bu Pizza sayti va undan pizzalar sotib olsih mumkin.</p>
+              <span class="aqua"
+                >View Live <i class="fas fa-external-link-alt"></i
+              ></span>
+            </div>
+          </div>
+          <div
+            class="work-card"
+            data-aos="flip-right"
+            onclick="
+              window.open('https://community-2-xi.vercel.app/', '_blank')
+            "
+          >
+            <img src="./images/finsweet.png" alt="Project 3" />
+            <div class="work-overlay">
+              <h3>Finsweet</h3>
+              <p>Bank va moliya sohasidagi innovatsion yechim.</p>
+              <span class="aqua"
+                >View Live <i class="fas fa-external-link-alt"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="developer dev" data-aos="fade-up">
+          ENG KUCHLI <span class="aqua">MUTAXASSISLARIMIZ</span>
+        </h2>
+        <div class="developer-parent">
+          <div class="developer-childs">
+            <img src="./images/salmon.png" alt="" />
+            <h2>Salmon Akbarov</h2>
+            <p>Frontend Specialist</p>
+          </div>
+          <div class="developer-childs">
+            <img src="./images/sulaymon.png" alt="" />
+            <h2>Sulaymon Sodiqov</h2>
+            <p>2 karra Frontend Specialist</p>
+          </div>
+          <div class="developer-childs">
+            <img src="./images/Ismoiljon_Agent_Coder.jpg" alt="" />
+            <h2>Ismoiljon Togayev</h2>
+            <p>Full-Stack Specialist bo'ladi.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <h2 class="section-title" data-aos="fade-up">
+          MENING <span class="aqua">STRENGHTS</span>
+        </h2>
+        <div class="services-grid">
+          <div class="s-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-rocket"></i>
+            <h3>High Speed</h3>
+            <p>Saytlaringiz Google PageSpeed'da 100 ball oladi.</p>
+          </div>
+          <div class="s-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Cyber Security</h3>
+            <p>Loyihalar kiber-hujumlardan 100% himoyalangan.</p>
+          </div>
+          <div class="s-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-brain"></i>
+            <h3>AI Integration</h3>
+            <p>Biznesingizga sun'iy intellektni integratsiya qilamiz.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="form">
+          <form action="" onsubmit="return sendtelegram();">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Ismingiz"
+              required
+              autocomplete="off"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email manzilingiz"
+              required
+            />
+
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Telefon raqamingiz"
+              required
+            />
+            <input
+              type="text"
+              name="tg_user"
+              id="tg_user"
+              placeholder="Telegram username (ixtiyoriy)"
+            />
+
+            <br /><br />
+            <textarea
+              name="message"
+              id="message"
+              cols="45"
+              rows="10"
+              placeholder="Izoh qoldiring"
+              required
+            ></textarea>
+            <br /><br />
+            <input type="submit" value="Yuborish" id="btn" />
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      style="
+        padding: 40px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      "
+    >
+      <p>&copy; 2026 Ismoiljon | Built with Passion and Clean Code</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // AOS initialization
+      AOS.init({ duration: 1000, once: true });
+
+      // Typed JS
+      new Typed("#typed", {
+        strings: [
+          "Frontend Specialist",
+          "Minecraft Specialist",
+          "Person",
+          "Web Developer",
+          "Agent Coder",
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+      });
+
+      // Header Scroll
+      window.addEventListener("scroll", () => {
+        document
+          .querySelector("header")
+          .classList.toggle("scrolled", window.scrollY > 50);
+      });
+
+      // Specialist hover glow tracking
+      document.querySelectorAll(".specialist-container").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width) * 100;
+          const y = ((e.clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty("--mx", `${x}%`);
+          card.style.setProperty("--my", `${y}%`);
+        });
+        card.addEventListener("mouseleave", () => {
+          card.style.setProperty("--mx", "50%");
+          card.style.setProperty("--my", "50%");
+        });
+      });
+    </script>
     <script src="sendtelegram.js"></script>
   </body>
 </html>
