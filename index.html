@@ -6,7 +6,11 @@
     <title>Ismoiljon | Full-Stack Developer & Designer</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./css/main.css" />
-
+    <link
+      rel="icon"
+      type="image/png"
+      href="./images/Ismoiljon_Agent_Coder.jpg"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Oxanium:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -19,17 +23,26 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
+    <div id="preloader">
+      <div class="loader-content">
+        <div class="aqua-spinner"></div>
+        <p class="loader-text">
+          INITIALIZING <span class="aqua">SYSTEM</span>...
+        </p>
+      </div>
+    </div>
     <header class="pro-header">
       <div class="container">
         <a href="#" class="brand-logo"
-          ><img class="logoo" src="./images/Agent_Logo.png" alt=""
+          ><img class="logoo" src="./images/Agent_Logo.png" alt="Logo"
         /></a>
 
         <nav class="desktop-menu">
           <a href="#home" class="nav-item">Home</a>
-          <a href="#about" class="nav-item">About</a>
           <a href="#specialist" class="nav-item">Expertise</a>
-          <a href="#portfolio" class="nav-item">Portfolio</a>
+          <a href="#works" class="nav-item">Projects</a>
+          <a href="#expert" class="nav-item">Experts</a>
+
           <a href="#services" class="nav-item">Services</a>
           <a href="#contact" class="nav-btn">Contact</a>
         </nav>
@@ -47,11 +60,11 @@
 
       <div class="overlay-content">
         <ul class="mobile-list">
-          <li><a href="#home" class="m-link">Home</a></li>
-          <li><a href="#about" class="m-link">About</a></li>
-          <li><a href="#portfolio" class="m-link">Portfolio</a></li>
-          <li><a href="#services" class="m-link">Services</a></li>
-          <li><a href="#contact" class="m-link">Contact</a></li>
+          <a href="#home" class="m-link">Home</a>
+          <a href="#specialist" class="m-link">Expertise</a>
+          <a href="#works" class="m-link">Projects</a>
+          <a href="#expert" class="m-link">Experts</a>
+          <a href="#services" class="m-link">Services</a>
         </ul>
 
         <div class="mobile-footer">
@@ -83,9 +96,9 @@
                 line-height: 1.6;
               "
             >
-              I build more than websites I craft digital experiences that feel
-              bold, fast, and unforgettable. Every pixel has purpose, every
-              line of code moves the mission forward.
+              I build more than websites—I craft digital experiences that feel
+              bold, fast, and unforgettable. Every pixel has purpose, every line
+              of code moves the mission forward.
             </p>
             <div class="btn-group">
               <a href="#works" class="btn-main">VIEW PROJECTS</a>
@@ -119,29 +132,28 @@
               Ismoiljon <span class="aqua">Developer</span>
             </h2>
             <p class="spec-text">
-              Raqamli mahsulotlarni strategiyadan tortib yakuniy ishlab
-              chiqarishgacha yetkazaman. Frontend’da nafis UI, backend’da esa
-              ishonchli arxitektura natijaga yo'naltirilgan ishlash uslubini
-              qo'llayman.
+              I deliver digital products from initial strategy to final
+              production. I combine elegant UI on the frontend with robust
+              architecture on the backend, focusing on results-driven workflows.
             </p>
 
             <div class="spec-stats">
               <div class="stat">
                 <h3>30+</h3>
-                <p>Prototip va MVP</p>
+                <p>Prototypes & MVPs</p>
               </div>
               <div class="stat">
                 <h3>3+</h3>
-                <p>Soha yo'nalishlari</p>
+                <p>Industries Covered</p>
               </div>
               <div class="stat">
                 <h3>99%</h3>
-                <p>Responsive moslashuv</p>
+                <p>Responsive Score</p>
               </div>
             </div>
             <div class="spec-cta">
-              <a href="#contact" class="btn-main">Loyihani Boshlash</a>
-              <a href="#works" class="btn-outline">Ishlarimni Ko'rish</a>
+              <a href="#contact" class="btn-main">Start a Project</a>
+              <a href="#works" class="btn-outline">View My Work</a>
             </div>
             <div class="social-links">
               <a href="https://t.me/CodeAgentX1" target="_blank"
@@ -160,7 +172,7 @@
 
       <section id="works">
         <h2 class="developer dev" data-aos="fade-up">
-          TOP 3 <span class="aqua">LOYIHALARIM</span>
+          TOP 3 <span class="aqua">PROJECTS</span>
         </h2>
         <div class="portfolio-grid">
           <div
@@ -173,7 +185,7 @@
             <img src="./images/manhattan.png" alt="Project 1" />
             <div class="work-overlay">
               <h3>ManHattan</h3>
-              <p>Modern va tezkor onlayn do'kon ekotizimi.</p>
+              <p>A modern and fast E-commerce ecosystem.</p>
               <span class="aqua"
                 >View Live <i class="fas fa-external-link-alt"></i
               ></span>
@@ -189,7 +201,7 @@
             <img src="./images/pizzashop.png" alt="Project 2" />
             <div class="work-overlay">
               <h3>Pizzashop</h3>
-              <p>Bu Pizza sayti va undan pizzalar sotib olsih mumkin.</p>
+              <p>Dynamic platform for online pizza ordering and management.</p>
               <span class="aqua"
                 >View Live <i class="fas fa-external-link-alt"></i
               ></span>
@@ -205,7 +217,7 @@
             <img src="./images/finsweet.png" alt="Project 3" />
             <div class="work-overlay">
               <h3>Finsweet</h3>
-              <p>Bank va moliya sohasidagi innovatsion yechim.</p>
+              <p>Innovative digital solution for banking and finance.</p>
               <span class="aqua"
                 >View Live <i class="fas fa-external-link-alt"></i
               ></span>
@@ -214,48 +226,101 @@
         </div>
       </section>
 
-      <section>
+      <section id="expert">
         <h2 class="developer dev" data-aos="fade-up">
-          ENG KUCHLI <span class="aqua">MUTAXASSISLARIMIZ</span>
+          CORE <span class="aqua">EXPERTS</span>
         </h2>
         <div class="developer-parent">
-          <div class="developer-childs">
-            <img src="./images/salmon.png" alt="" />
+          <div class="developer-childs" data-aos="fade-up">
+            <div class="expert-media">
+              <img src="./images/salmon.png" alt="Salmon" />
+              <div class="expert-links">
+                <a
+                  href="https://t.me/salmon_akbarov"
+                  target="_blank"
+                  class="expert-btn tg"
+                  ><i class="fab fa-telegram"></i
+                ></a>
+                <a
+                  href="https://github.com/salmonbek"
+                  target="_blank"
+                  class="expert-btn gh"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
             <h2>Salmon Akbarov</h2>
             <p>Frontend Specialist</p>
           </div>
-          <div class="developer-childs">
-            <img src="./images/sulaymon.png" alt="" />
+
+          <div class="developer-childs" data-aos="fade-up" data-aos-delay="100">
+            <div class="expert-media">
+              <img src="./images/sulaymon.png" alt="Sulaymon" />
+              <div class="expert-links">
+                <a
+                  href="https://t.me/username"
+                  target="_blank"
+                  class="expert-btn tg"
+                  ><i class="fab fa-telegram"></i
+                ></a>
+                <a
+                  href="https://github.com/username"
+                  target="_blank"
+                  class="expert-btn gh"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
             <h2>Sulaymon Sodiqov</h2>
-            <p>2 karra Frontend Specialist</p>
+            <p>Senior Frontend Specialist</p>
           </div>
-          <div class="developer-childs">
-            <img src="./images/Ismoiljon_Agent_Coder.jpg" alt="" />
+
+          <div class="developer-childs" data-aos="fade-up" data-aos-delay="200">
+            <div class="expert-media">
+              <img src="./images/Ismoiljon_Agent_Coder.jpg" alt="Ismoiljon" />
+              <div class="expert-links">
+                <a
+                  href="https://t.me/CodeAgentX1"
+                  target="_blank"
+                  class="expert-btn tg"
+                  ><i class="fab fa-telegram"></i
+                ></a>
+                <a
+                  href="https://github.com/CodeAgentX1"
+                  target="_blank"
+                  class="expert-btn gh"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
             <h2>Ismoiljon Togayev</h2>
-            <p>Full-Stack Specialist bo'ladi.</p>
+            <p>Full-Stack Engineer</p>
           </div>
         </div>
       </section>
 
       <section id="services">
         <h2 class="section-title" data-aos="fade-up">
-          MENING <span class="aqua">STRENGHTS</span>
+          MY <span class="aqua">STRENGTHS</span>
         </h2>
         <div class="services-grid">
           <div class="s-card" data-aos="fade-up" data-aos-delay="100">
             <i class="fas fa-rocket"></i>
             <h3>High Speed</h3>
-            <p>Saytlaringiz Google PageSpeed'da 100 ball oladi.</p>
+            <p>Optimized performance with 100/100 Google PageSpeed scores.</p>
           </div>
           <div class="s-card" data-aos="fade-up" data-aos-delay="200">
             <i class="fas fa-shield-alt"></i>
             <h3>Cyber Security</h3>
-            <p>Loyihalar kiber-hujumlardan 100% himoyalangan.</p>
+            <p>Projects are 100% secured against modern cyber threats.</p>
           </div>
           <div class="s-card" data-aos="fade-up" data-aos-delay="300">
             <i class="fas fa-brain"></i>
             <h3>AI Integration</h3>
-            <p>Biznesingizga sun'iy intellektni integratsiya qilamiz.</p>
+            <p>
+              Integrating cutting-edge Artificial Intelligence into your
+              business.
+            </p>
           </div>
         </div>
       </section>
@@ -267,7 +332,7 @@
               type="text"
               name="name"
               id="name"
-              placeholder="Ismingiz"
+              placeholder="Your Name"
               required
               autocomplete="off"
             />
@@ -275,7 +340,7 @@
               type="email"
               name="email"
               id="email"
-              placeholder="Email manzilingiz"
+              placeholder="Your Email"
               required
             />
 
@@ -283,14 +348,14 @@
               type="text"
               name="phone"
               id="phone"
-              placeholder="Telefon raqamingiz"
+              placeholder="Phone Number"
               required
             />
             <input
               type="text"
               name="tg_user"
               id="tg_user"
-              placeholder="Telegram username (ixtiyoriy)"
+              placeholder="Telegram Username (Optional)"
             />
 
             <br /><br />
@@ -299,11 +364,11 @@
               id="message"
               cols="45"
               rows="10"
-              placeholder="Izoh qoldiring"
+              placeholder="Tell me about your project"
               required
             ></textarea>
             <br /><br />
-            <input type="submit" value="Yuborish" id="btn" />
+            <input type="submit" value="Send Message" id="btn" />
           </form>
         </div>
       </section>
@@ -318,19 +383,30 @@
     >
       <p>&copy; 2026 Ismoiljon | Built with Passion and Clean Code</p>
     </footer>
-
+    <button id="backToTop" title="Go to top">
+      <i class="fas fa-chevron-up"></i>
+      <svg class="progress-ring" width="50" height="50">
+        <circle
+          class="progress-ring__circle"
+          stroke="var(--primary-aqua)"
+          stroke-width="3"
+          fill="transparent"
+          r="22"
+          cx="25"
+          cy="25"
+        />
+      </svg>
+    </button>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      // AOS initialization
       AOS.init({ duration: 1000, once: true });
 
-      // Typed JS
       new Typed("#typed", {
         strings: [
           "Frontend Specialist",
-          "Minecraft Specialist",
-          "Person",
+          "UI/UX Enthusiast",
           "Web Developer",
+          "Full-Stack Architect",
           "Agent Coder",
         ],
         typeSpeed: 50,
@@ -338,14 +414,12 @@
         loop: true,
       });
 
-      // Header Scroll
       window.addEventListener("scroll", () => {
         document
           .querySelector("header")
           .classList.toggle("scrolled", window.scrollY > 50);
       });
 
-      // Specialist hover glow tracking
       document.querySelectorAll(".specialist-container").forEach((card) => {
         card.addEventListener("mousemove", (e) => {
           const rect = card.getBoundingClientRect();
@@ -357,6 +431,47 @@
         card.addEventListener("mouseleave", () => {
           card.style.setProperty("--mx", "50%");
           card.style.setProperty("--my", "50%");
+        });
+      });
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+
+        // Bir oz kutib (masalan 500ms) keyin o'chiradi, shunda effekt chiroyli chiqadi
+        setTimeout(() => {
+          preloader.classList.add("loader-hidden");
+        }, 500);
+      });
+
+      const backToTopBtn = document.getElementById("backToTop");
+      const circle = document.querySelector(".progress-ring__circle");
+      const radius = circle.r.baseVal.value;
+      const circumference = 2 * Math.PI * radius;
+
+      circle.style.strokeDasharray = `${circumference} ${circumference}`;
+      circle.style.strokeDashoffset = circumference;
+
+      window.addEventListener("scroll", () => {
+        // 1. Tugmani ko'rsatish/yashirish (300px dan keyin)
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add("show");
+        } else {
+          backToTopBtn.classList.remove("show");
+        }
+
+        // 2. Progress aylanani hisoblash
+        const scrollTotal =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrollProgress = window.scrollY / scrollTotal;
+        const offset = circumference - scrollProgress * circumference;
+        circle.style.strokeDashoffset = offset;
+      });
+
+      // 3. Bosilganda tepaga chiqish
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
         });
       });
     </script>

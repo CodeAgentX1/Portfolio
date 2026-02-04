@@ -457,7 +457,9 @@ section {
   color: var(--primary-aqua);
   margin-bottom: 20px;
 }
-
+main {
+  padding-top: 80px;
+}
 /* --- Contact Form --- */
 form input,
 form textarea {

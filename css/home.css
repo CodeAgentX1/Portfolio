@@ -1,0 +1,146 @@
+/* Preloader asosiy foni */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #040914; /* Saytingni foni bilan bir xil */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* Hammadan tepada turishi shart */
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+/* Aqua Spinner (Aylana) */
+.aqua-spinner {
+  width: 70px;
+  height: 70px;
+  border: 5px solid rgba(0, 210, 211, 0.1);
+  border-top: 5px solid var(--primary-aqua);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 15px rgba(0, 210, 211, 0.3);
+}
+
+/* Yuklanish yozuvi */
+.loader-text {
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 3px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: pulse 1.5s infinite;
+}
+
+/* Animatsiyalar */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Sayt yuklangandan keyin loaderga beriladigan klass */
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* --- Global Selection Style --- */
+
+/* Barcha matnlarni belgilaganda aqua fon va qora harflar */
+::selection {
+  background-color: var(--primary-aqua);
+  color: #040914; /* Saytning to'q foni rangida bo'lsa matn yaxshi o'qiladi */
+}
+
+/* Firefox brauzeri uchun alohida qoida */
+::-moz-selection {
+  background-color: var(--primary-aqua);
+  color: #040914;
+}
+
+/* --- Image Selection & Highlight --- */
+
+/* Rasmlarni belgilaganda aqua rangli soya (outline) chiqishi uchun */
+img::selection {
+  background-color: rgba(0, 210, 211, 0.3); /* Rasmlar ustida shaffof aqua */
+}
+
+/* Ba'zi brauzerlarda rasmni ko'chirmoqchi bo'lib tortganda (drag) chiqadigan effekt */
+img {
+  -webkit-user-drag: none; /* Rasmni tortib ketishni taqiqlash (ixtiyoriy, tartib uchun) */
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--bg-dark);
+  color: var(--primary-aqua);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 210, 211, 0.2);
+  border: 1px solid rgba(0, 210, 211, 0.3);
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#backToTop:hover {
+  background-color: var(--primary-aqua);
+  color: #040914;
+  box-shadow: 0 0 25px var(--primary-aqua);
+  transform: translateY(-5px);
+}
+
+/* Progress Ring Stili */
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.1s;
+  transform-origin: 50% 50%;
+  stroke-dasharray: 138.23; /* 2 * PI * R (22) */
+  stroke-dashoffset: 138.23;
+}

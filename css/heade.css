@@ -20,19 +20,25 @@ body {
   overflow-x: hidden;
 }
 
+nav {
+  align-items: center;
+}
+header {
+  align-items: center;
+}
+
 /* --- HEADER SETTINGS --- */
 .pro-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px; /* Kattaroq balandlik - Premium his beradi */
+  height: 120px; /* Kattaroq balandlik - Premium his beradi */
   display: flex;
   align-items: center;
   z-index: 1000;
   transition: 0.4s ease;
   background: transparent; /* Boshida shaffof */
-  padding: 10px 0px;
 }
 
 /* Scroll bo'lganda orqa fon qorayadi */
@@ -98,12 +104,42 @@ body {
   transition: 0.3s ease;
 }
 
-.nav-btn:hover {
-  border-color: var(--primary-cyan);
-  color: var(--primary-cyan);
-  background: rgba(0, 210, 211, 0.05);
+.nav-btn {
+  /* Asosiy ko'rinish */
+  position: relative;
+  background: linear-gradient(
+    to right,
+    var(--primary-aqua) 50%,
+    transparent 50%
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
+  color: var(--primary-aqua); /* Dastlab matn rangi aqua bo'ladi */
+  border: 2px solid var(--primary-aqua);
+  padding: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 15px;
+  transition: all 0.5s ease-out; /* Sekin to'lishi uchun transition */
+  grid-column: span 2;
+  margin-top: 10px;
 }
 
+/* Hover bo'lganda (Sichqoncha borganda) */
+.nav-btn:hover {
+  background-position: left bottom; /* Fonni surib to'ldiramiz */
+  color: #040914; /* Matn rangi qora (fon rangiga) o'zgaradi */
+  letter-spacing: 6px; /* Harflar kengayishi */
+  box-shadow: 0 0 30px rgba(0, 210, 211, 0.6);
+  transform: scale(1.02);
+}
+
+/* Bossang (Active holati) */
+.nav-btn:active {
+  transform: scale(0.98);
+}
 /* --- BURGER MENU ICON (Animatsiya) --- */
 .burger-menu {
   display: none; /* Desktopda yo'q */
@@ -270,8 +306,35 @@ body {
   text-shadow: 0 0 30px rgba(0, 210, 211, 0.3);
 }
 
+/* --- WORK SECTION --- */
+.work-overlay p {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.work-overlay:hover p {
+  color: var(--text-muted);
+}
+
+.work-overlay:hover h3 {
+  color: white;
+}
+
 .logoo {
   width: 170px;
+}
+.s-card h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.s-card:hover {
+  box-shadow: 0 0 30px rgba(0, 210, 211, 0.4);
+  transform: translateY(-10px);
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 /* --- CLOSE BUTTON STYLE --- */
@@ -356,4 +419,47 @@ body {
 
 .social-text a:hover {
   color: var(--primary-cyan);
+}
+
+/* --- Header Navigation Links --- */
+nav a {
+  text-decoration: none;
+  color: var(--text-white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative; /* Chiziqni joylashtirish uchun kerak */
+  display: inline-block; /* Tepaga surilishi uchun kerak */
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease; /* Sekin surilish */
+}
+
+/* Linkka hover bo'lganda tepaga chiqishi */
+nav a:hover {
+  color: var(--primary-aqua);
+  transform: translateY(-5px); /* 5 piksel tepaga suriladi */
+}
+
+/* Pastdagi chiziq uchun element (pseudo-element) */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Matndan biroz pastroqda turadi */
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-aqua);
+  box-shadow: 0 0 10px var(--primary-aqua); /* Chiziqqa neon effekti */
+
+  /* Dastlab chiziq ko'rinmas va o'rtada kichik bo'ladi */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: center; /* Chiziq o'rtadan yoyiladi */
+}
+
+/* Hover bo'lganda chiziq chiqishi */
+nav a:hover::after {
+  transform: scaleX(1); /* Chiziq to'liq kenglikka yoyiladi */
 }
