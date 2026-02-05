@@ -422,7 +422,7 @@ header {
 }
 
 /* --- Header Navigation Links --- */
-nav a {
+nav .nav-item {
   text-decoration: none;
   color: var(--text-white);
   font-size: 0.9rem;
@@ -437,13 +437,13 @@ nav a {
 }
 
 /* Linkka hover bo'lganda tepaga chiqishi */
-nav a:hover {
+nav .nav-item:hover {
   color: var(--primary-aqua);
   transform: translateY(-5px); /* 5 piksel tepaga suriladi */
 }
 
 /* Pastdagi chiziq uchun element (pseudo-element) */
-nav a::after {
+nav .nav-item::after {
   content: "";
   position: absolute;
   left: 0;

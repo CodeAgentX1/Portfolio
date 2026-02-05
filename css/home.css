@@ -144,3 +144,103 @@ img {
   stroke-dasharray: 138.23; /* 2 * PI * R (22) */
   stroke-dashoffset: 138.23;
 }
+
+/* --- Home Section --- */
+/* Settings Dropdown Styles */
+/* --- 1. Header Container Tekisligi --- */
+.pro-header .container {
+  display: flex;
+  justify-content: space-between; /* Logo chapda, menyu o'ngda */
+  align-items: center; /* Vertikal markazda (bir chiziqda) tekislaydi */
+  padding: 15px 0;
+}
+
+/* --- 2. Desktop Menyu (Linklar va Settingsni bir chiziqqa qo'yish) --- */
+.desktop-menu {
+  display: flex;
+  align-items: center; /* Elementlar (linklar, dropdown, button) bir chiziqda bo'ladi */
+  gap: 25px; /* Elementlar orasidagi masofa */
+}
+
+/* --- 3. Settings Dropdown Asosiy Qismi --- */
+.settings-dropdown {
+  position: relative; /* Ichidagi dropdown-content shunga qarab joylashadi */
+  display: flex; /* Flex orqali icon va yozuvni tekislash */
+  align-items: center;
+}
+
+/* Settings tugmasi (yozuv va icon) */
+#settingsBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Icon va matn orasi */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* --- 4. Dropdown Kontenti (Tugmaning pastida chiqadigan qism) --- */
+.dropdown-content {
+  display: none; /* Dastlab yopiq */
+  position: absolute;
+  top: 100%; /* Tugmaning aynan pastki chegarasidan boshlanadi */
+  right: 0; /* O'ng tomondan tekislanadi */
+  margin-top: 15px; /* Tugma va menyu orasi biroz ochiq bo'lishi uchun */
+
+  background: rgba(4, 9, 20, 0.98);
+  min-width: 170px;
+  box-shadow: 0 10px 30px rgba(0, 210, 211, 0.3);
+  border: 1px solid var(--primary-aqua);
+  border-radius: 12px;
+  z-index: 1000;
+  overflow: hidden; /* Burchaklarni border-radiusga moslash */
+}
+
+/* JS orqali "show" klassi qo'shilganda ishlaydi */
+.dropdown-content.show {
+  display: block;
+  animation: slideDown 0.3s ease forwards;
+}
+
+/* --- 5. Til Tanlash Variantlari --- */
+.lang-option {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  font-family: "Space Grotesk", sans-serif;
+  transition: 0.3s;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lang-option:last-child {
+  border-bottom: none; /* Oxirgi variantda chiziq bo'lmaydi */
+}
+
+.lang-option:hover {
+  background: rgba(0, 210, 211, 0.1);
+  color: var(--primary-aqua);
+  padding-left: 20px;
+}
+
+/* --- 6. Nav Tugmasi (Contact) --- */
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 25px;
+  text-decoration: none;
+}
+
+/* --- 7. Animatsiya --- */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
