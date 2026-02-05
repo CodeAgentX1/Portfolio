@@ -370,3 +370,21 @@ document
       document.getElementById("mobileDropdown").classList.remove("show");
     });
   });
+
+function updateContent() {
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+
+    if (key.startsWith("[placeholder]")) {
+      // Placeholderni tarjima qilish
+      const pureKey = key.replace("[placeholder]", "");
+      el.setAttribute("placeholder", i18next.t(pureKey));
+    } else if (el.tagName === "INPUT" && el.type === "submit") {
+      // Tugma matnini tarjima qilish
+      el.value = i18next.t(key);
+    } else {
+      // Oddiy matnlarni (div, p, span) tarjima qilish
+      el.innerHTML = i18next.t(key);
+    }
+  });
+}

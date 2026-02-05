@@ -94,7 +94,7 @@
               <a
                 href="javascript:void(0)"
                 class="m-link"
-                onclick="toggleMobileDropdown()"
+                onclick="toggleMobgileDropdown()"
               >
                 Settings
                 <i class="fas fa-chevron-down" style="font-size: 1rem"></i>
@@ -368,18 +368,22 @@
         <div class="services-grid">
           <div class="s-card" data-aos="fade-up" data-aos-delay="100">
             <i class="fas fa-rocket"></i>
-            <h3>High Speed</h3>
-            <p>Optimized performance with 100/100 Google PageSpeed scores.</p>
+            <h3 data-i18n="s-speed">High Speed</h3>
+            <p data-i18n="s_speed_d">
+              Optimized performance with 100/100 Google PageSpeed scores.
+            </p>
           </div>
           <div class="s-card" data-aos="fade-up" data-aos-delay="200">
             <i class="fas fa-shield-alt"></i>
-            <h3>Cyber Security</h3>
-            <p>Projects are 100% secured against modern cyber threats.</p>
+            <h3 data-i18n="s_cyber">Cyber Security</h3>
+            <p data-i18n="s_cyber_d">
+              Projects are 100% secured against modern cyber threats.
+            </p>
           </div>
           <div class="s-card" data-aos="fade-up" data-aos-delay="300">
             <i class="fas fa-brain"></i>
-            <h3>AI Integration</h3>
-            <p>
+            <h3 data-i18n="s-ai">AI Integration</h3>
+            <p data-i18n="s_ai_d">
               Integrating cutting-edge Artificial Intelligence into your
               business.
             </p>
@@ -391,6 +395,7 @@
         <div class="form">
           <form action="" onsubmit="return sendtelegram();">
             <input
+              data-i18n="[placeholder]ph_name"
               type="text"
               name="name"
               id="name"
@@ -399,6 +404,7 @@
               autocomplete="off"
             />
             <input
+              data-i18n="[placeholder]ph_email"
               type="email"
               name="email"
               id="email"
@@ -407,6 +413,7 @@
             />
 
             <input
+              data-i18n="[placeholder]ph_phone"
               type="text"
               name="phone"
               id="phone"
@@ -414,6 +421,7 @@
               required
             />
             <input
+              data-i18n="[placeholder]ph_tg"
               type="text"
               name="tg_user"
               id="tg_user"
@@ -422,6 +430,7 @@
 
             <br /><br />
             <textarea
+              data-i18n="[placeholder]ph_message"
               name="message"
               id="message"
               cols="45"
@@ -430,7 +439,12 @@
               required
             ></textarea>
             <br /><br />
-            <input type="submit" value="Send Message" id="btn" />
+            <input
+              type="submit"
+              value="Send Message"
+              id="btn"
+              data-i18n="btn_send"
+            />
           </form>
         </div>
       </section>
@@ -443,7 +457,9 @@
         border-top: 1px solid rgba(255, 255, 255, 0.05);
       "
     >
-      <p>&copy; 2026 Ismoiljon | Built with Passion and Clean Code</p>
+      <p data-i18n="footer">
+        &copy; 2026 Ismoiljon | Built with Passion and Clean Code
+      </p>
     </footer>
     <button id="backToTop" title="Go to top">
       <i class="fas fa-chevron-up"></i>
