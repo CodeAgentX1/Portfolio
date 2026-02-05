@@ -284,7 +284,7 @@ const translations = {
     view_projects: "СМОТРЕТЬ ПРОЕКТЫ",
     about_title: "Обо мне",
     exp_approach: "Опыт и подход",
-    spec_badge: "Full-Stack Архитектор",
+    spec_badge: "Фулл-Стак Архитектор",
     spec_text:
       "Я создаю цифровые продукты от стратегии до финального производства. Сочетаю элегантный UI и надежную архитектуру.",
     developer: "разработчик",
@@ -344,3 +344,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem("selectedLang") || "en";
   applyLanguage(savedLang);
 });
+
+//New jS edits done above
+//Menu toggle
+//Dropdown funksiyasi
+function toggleMobileDropdown() {
+  const dropdown = document.getElementById("mobileDropdown");
+  dropdown.classList.toggle("show");
+
+  // Iconkani aylantirish (ixtiyoriy)
+  const icon = event.currentTarget.querySelector(".fa-chevron-down");
+  if (icon) {
+    icon.style.transform = dropdown.classList.contains("show")
+      ? "rotate(180deg)"
+      : "rotate(0deg)";
+    icon.style.transition = "0.3s";
+  }
+}
+
+// Mobile dropdown ichidagi tillar bosilganda dropdownni yopish
+document
+  .querySelectorAll(".mobile-dropdown-content .lang-option")
+  .forEach((option) => {
+    option.addEventListener("click", () => {
+      document.getElementById("mobileDropdown").classList.remove("show");
+    });
+  });

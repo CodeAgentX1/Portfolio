@@ -168,41 +168,88 @@ header {
 }
 
 /* --- MOBILE OVERLAY (Rasmdagidek) --- */
+
+/* --- MOBILE MENU OVERLAY (To'g'rilangan) --- */
 .mobile-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: var(--bg-dark); /* Qora fon */
+  background-color: rgba(4, 9, 20, 0.98); /* To'q fon */
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2000; /* Header va hamma narsadan balandda tursin */
+
+  /* Yashirish holati */
   opacity: 0;
   visibility: hidden;
-  transition: 0.5s ease;
-  z-index: 1050;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 /* Menu ochilganda */
 .mobile-overlay.open {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
-.overlay-content {
-  text-align: center;
-  width: 100%;
+/* Linklar animatsiyasi uchun */
+.m-link {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
+  margin: 15px 0;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.4s ease;
 }
 
-.mobile-list {
-  list-style: none;
-  margin-bottom: 50px;
+.mobile-overlay.open .m-link {
+  transform: translateY(0);
+  opacity: 1;
 }
 
-.mobile-list li {
-  margin: 25px 0;
-  overflow: hidden; /* Animatsiya uchun */
+/* Ketma-ket chiqish effekti */
+.mobile-overlay.open li:nth-child(1) .m-link {
+  transition-delay: 0.1s;
+}
+.mobile-overlay.open li:nth-child(2) .m-link {
+  transition-delay: 0.2s;
+}
+.mobile-overlay.open li:nth-child(3) .m-link {
+  transition-delay: 0.3s;
+}
+.mobile-overlay.open li:nth-child(4) .m-link {
+  transition-delay: 0.4s;
+}
+.mobile-overlay.open li:nth-child(5) .m-link {
+  transition-delay: 0.5s;
+}
+
+/* Burger Menu Responsive */
+@media (max-width: 992px) {
+  .desktop-menu {
+    display: none !important;
+  }
+  .burger-menu {
+    display: block !important;
+  }
+}
+
+/* Close Button Position */
+.close-menu {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 50px;
+  color: var(--primary-cyan);
+  cursor: pointer;
+  z-index: 2100;
 }
 
 .m-link {
@@ -216,28 +263,6 @@ header {
   transition:
     transform 0.5s ease,
     color 0.3s;
-}
-
-.mobile-overlay.open .m-link {
-  transform: translateY(0); /* Joyiga qaytadi */
-}
-
-/* Staggered Delay (Linklar ketma-ket chiqadi) */
-.mobile-overlay.open li:nth-child(1) .m-link {
-  transition-delay: 0.1s;
-}
-.mobile-overlay.open li:nth-child(2) .m-link {
-  transition-delay: 0.2s;
-}
-.mobile-overlay.open li:nth-child(3) .m-link {
-  transition-delay: 0.3s;
-}
-.mobile-overlay.open li:nth-child(4) .m-link {
-  transition-delay: 0.4s;
-}
-
-.m-link:hover {
-  color: var(--primary-cyan);
 }
 
 /* --- MOBILE MENUDA ODDIY BUTTON --- */
@@ -422,7 +447,7 @@ header {
 }
 
 /* --- Header Navigation Links --- */
-nav .nav-item {
+nav a {
   text-decoration: none;
   color: var(--text-white);
   font-size: 0.9rem;
@@ -437,13 +462,13 @@ nav .nav-item {
 }
 
 /* Linkka hover bo'lganda tepaga chiqishi */
-nav .nav-item:hover {
+nav a:hover {
   color: var(--primary-aqua);
   transform: translateY(-5px); /* 5 piksel tepaga suriladi */
 }
 
 /* Pastdagi chiziq uchun element (pseudo-element) */
-nav .nav-item::after {
+nav a:not(.nav-btn)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -460,6 +485,6 @@ nav .nav-item::after {
 }
 
 /* Hover bo'lganda chiziq chiqishi */
-nav a:hover::after {
+nav a:not(.nav-btn):hover::after {
   transform: scaleX(1); /* Chiziq to'liq kenglikka yoyiladi */
 }

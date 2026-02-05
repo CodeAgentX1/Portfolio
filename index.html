@@ -32,7 +32,7 @@
       </div>
     </div>
     <header class="pro-header">
-      <div class="container">
+      <div class="nav container">
         <a href="#" class="brand-logo"
           ><img class="logoo" src="./images/Agent_Logo.png" alt="Logo"
         /></a>
@@ -82,26 +82,39 @@
         </div>
       </div>
     </header>
-
     <div class="mobile-overlay" id="mobile-nav">
       <div class="close-menu" id="close-btn">&times;</div>
 
       <div class="overlay-content">
         <ul class="mobile-list">
-          <a href="#home" class="m-link">Home</a>
-          <a href="#specialist" class="m-link">Expertise</a>
-          <a href="#works" class="m-link">Projects</a>
-          <a href="#expert" class="m-link">Experts</a>
-          <a href="#services" class="m-link">Services</a>
+          <li><a href="#home" class="m-link">Home</a></li>
+          <li><a href="#specialist" class="m-link">Expertise</a></li>
+          <li>
+            <div class="mobile-settings">
+              <a
+                href="javascript:void(0)"
+                class="m-link"
+                onclick="toggleMobileDropdown()"
+              >
+                Settings
+                <i class="fas fa-chevron-down" style="font-size: 1rem"></i>
+              </a>
+              <div class="mobile-dropdown-content" id="mobileDropdown">
+                <div class="lang-option" onclick="changeLanguage('en')">
+                  🇺🇸 English
+                </div>
+                <div class="lang-option" onclick="changeLanguage('uz')">
+                  🇺🇿 O'zbekcha
+                </div>
+                <div class="lang-option" onclick="changeLanguage('ru')">
+                  🇷🇺 Русский
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="#works" class="m-link">Projects</a></li>
+          <li><a href="#contact" class="m-link">Contact</a></li>
         </ul>
-
-        <div class="mobile-footer">
-          <a href="#contact" class="mobile-btn-simple">Start a Project</a>
-          <div class="social-text">
-            <a href="#">Telegram</a> / <a href="#">Instagram</a> /
-            <a href="#">GitHub</a>
-          </div>
-        </div>
       </div>
     </div>
 
@@ -179,20 +192,24 @@
             <div class="spec-stats">
               <div class="stat">
                 <h3>30+</h3>
-                <p>Prototypes & MVPs</p>
+                <p data-i18n="stat_proto">Prototypes & MVPs</p>
               </div>
               <div class="stat">
                 <h3>3+</h3>
-                <p>Industries Covered</p>
+                <p data-i18n="stat_ind">Industries Covered</p>
               </div>
               <div class="stat">
                 <h3>99%</h3>
-                <p>Responsive Score</p>
+                <p data-i18n="stat_resp">Responsive Score</p>
               </div>
             </div>
             <div class="spec-cta">
-              <a href="#contact" class="btn-main">Start a Project</a>
-              <a href="#works" class="btn-outline">View My Work</a>
+              <a data-i18n="btn_start" href="#contact" class="btn-main"
+                >Start a Project</a
+              >
+              <a data-i18n="btn_work" href="#works" class="btn-outline"
+                >View My Work</a
+              >
             </div>
             <div class="social-links">
               <a href="https://t.me/CodeAgentX1" target="_blank"
@@ -210,7 +227,7 @@
       </section>
 
       <section id="works">
-        <h2 class="developer dev" data-aos="fade-up">
+        <h2 data-i18n="top_projects" class="developer dev" data-aos="fade-up">
           TOP 3 <span class="aqua">PROJECTS</span>
         </h2>
         <div class="portfolio-grid">
@@ -224,8 +241,10 @@
             <img src="./images/manhattan.png" alt="Project 1" />
             <div class="work-overlay">
               <h3>ManHattan</h3>
-              <p>A modern and fast E-commerce ecosystem.</p>
-              <span class="aqua"
+              <p data-i18n="work_1_desc">
+                A modern and fast E-commerce ecosystem.
+              </p>
+              <span data-i18n="view_live" class="aqua"
                 >View Live <i class="fas fa-external-link-alt"></i
               ></span>
             </div>
@@ -240,8 +259,10 @@
             <img src="./images/pizzashop.png" alt="Project 2" />
             <div class="work-overlay">
               <h3>Pizzashop</h3>
-              <p>Dynamic platform for online pizza ordering and management.</p>
-              <span class="aqua"
+              <p data-i18n="work_2_desc">
+                Dynamic platform for online pizza ordering and management.
+              </p>
+              <span data-i18n="view_live" class="aqua"
                 >View Live <i class="fas fa-external-link-alt"></i
               ></span>
             </div>
@@ -256,8 +277,10 @@
             <img src="./images/finsweet.png" alt="Project 3" />
             <div class="work-overlay">
               <h3>Finsweet</h3>
-              <p>Innovative digital solution for banking and finance.</p>
-              <span class="aqua"
+              <p data-i18n="work_3_desc">
+                Innovative digital solution for banking and finance.
+              </p>
+              <span data-i18n="view_live" class="aqua"
                 >View Live <i class="fas fa-external-link-alt"></i
               ></span>
             </div>
@@ -266,7 +289,7 @@
       </section>
 
       <section id="expert">
-        <h2 class="developer dev" data-aos="fade-up">
+        <h2 data-i18n="core_experts" class="developer dev" data-aos="fade-up">
           CORE <span class="aqua">EXPERTS</span>
         </h2>
         <div class="developer-parent">
@@ -339,7 +362,7 @@
       </section>
 
       <section id="services">
-        <h2 class="section-title" data-aos="fade-up">
+        <h2 data-i18n="strengths" class="section-title" data-aos="fade-up">
           MY <span class="aqua">STRENGTHS</span>
         </h2>
         <div class="services-grid">
@@ -438,6 +461,6 @@
     </button>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <script src="sendtelegram.js"></script>
+    <script src="./sendtelegram.js"></script>
   </body>
 </html>

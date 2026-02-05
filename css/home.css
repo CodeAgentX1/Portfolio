@@ -244,3 +244,39 @@ img {
     transform: translateY(0);
   }
 }
+
+
+/* Mobile dropdown konteyneri */
+.mobile-settings {
+  display: block;
+  width: 100%;
+}
+
+/* Yopiq holati */
+.mobile-dropdown-content {
+  display: none; /* Dastlab yopiq */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin: 10px auto;
+  width: 200px; /* Markazda chiroyli turishi uchun */
+  padding: 10px 0;
+}
+
+/* Dropdown ochilgandagi klass */
+.mobile-dropdown-content.show {
+  display: block;
+}
+
+/* Til tanlash variantlari */
+.mobile-dropdown-content .lang-option {
+  padding: 12px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mobile-dropdown-content .lang-option:hover {
+  color: var(--primary-cyan);
+  background: rgba(0, 210, 211, 0.1);
+}
